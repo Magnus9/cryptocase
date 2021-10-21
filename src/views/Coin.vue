@@ -1,5 +1,5 @@
 <template>
-  <b-card header-tag="header" footer-tag="footer" style="width: 60%;" v-if="coin">
+  <b-card header-tag="header" footer-tag="footer" v-if="coin">
     <template #header>
       <h6 class="mb-0">{{ coin.fullName }} ({{ coin.name }})</h6>
     </template>
@@ -8,7 +8,7 @@
         <div>
           <img :src="coin.imageUrl" style="width: 100px;" />
         </div>
-        <span style="padding-left: 4%;">
+        <span style="padding: 0px 2px 4px 10px;">
           <a :href="coin.url">{{ coin.url }}</a>
         </span>
       </div>
@@ -83,18 +83,23 @@
   })
   export default class Coin extends Vue {
 
-    coin: CoinInfo = null
+    coin: CoinInfo | null = null
 
-    @Prop() id: string
+    @Prop() id!: string
     created() {
       if (!store.state.coins.length) {
         store.dispatch('pollTopCryptoCurrencies')
+      } else {
+        this.coin = store.getters.getCurrentCoin(this.id)
       }
-      store.watch(state => {
-        if (state.coins.length) {
-          this.coin = store.getters.getCurrentCoin(this.id)
+      store.watch(
+        () => store.state.coins,
+        (coins) => {
+          if (coins.length) {
+            this.coin = store.getters.getCurrentCoin(this.id)
+          }
         }
-      })
+      )
     }
   }
 </script>
