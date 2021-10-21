@@ -35,11 +35,18 @@ export default new Vuex.Store({
           const coins: CoinInfo[] = data.Data.map((item: any) => {
             const usd = item.DISPLAY ? item.DISPLAY.USD : { }
             return {
-              id:          item.CoinInfo.Id,
-              fullName:    item.CoinInfo.FullName,
-              name:        item.CoinInfo.Name,
-              imageUrl:    `https://cryptocompare.com${item.CoinInfo.ImageUrl}`,
-              url:         `https://cryptocompare.com${item.CoinInfo.Url}`,
+              id:              item.CoinInfo.Id,
+              fullName:        item.CoinInfo.FullName,
+              name:            item.CoinInfo.Name,
+              imageUrl:        `https://cryptocompare.com${item.CoinInfo.ImageUrl}`,
+              url:             `https://cryptocompare.com${item.CoinInfo.Url}`,
+              algorithm:       item.CoinInfo.Algorithm,
+              proofType:       item.CoinInfo.ProofType,
+              maxSupply:       item.CoinInfo.MaxSupply,
+              assetLaunchDate: item.CoinInfo.AssetLaunchDate,
+              blockNumber:     item.CoinInfo.BlockNumber,
+              blockTime:       item.CoinInfo.BlockTime,
+              blockReward:     item.CoinInfo.BlockReward,
               coinMetrics: usd
             }
           })
