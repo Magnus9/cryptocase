@@ -3,9 +3,9 @@
     <img src="@/assets/crypto.png" />
     <div class="card-content">
       <span>Welcome to CryptoCase. Press the button to view top crypto currencies</span>
-      <b-button variant="success">
-        <router-link to="/coins">View Currencies</router-link>
-      </b-button>
+      <router-link to="/coins">
+        <b-button variant="primary">View Currencies</b-button>
+      </router-link>
     </div>
   </div>
 </template>
