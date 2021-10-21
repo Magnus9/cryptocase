@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+import Vuex, { ActionContext } from 'vuex'
 import API from '@/api/API'
 import { State, CoinInfo } from '@/types/index'
 
@@ -14,7 +14,7 @@ const state: State = {
   intervalId: 0
 }
 
-async function getTopCryptoCurrencies(context: any) {
+async function getTopCryptoCurrencies(context: ActionContext<State, State>) {
   const resp = await API.getTopCryptoCurrencies()
   const { data, status } = resp
   
