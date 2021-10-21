@@ -2,9 +2,9 @@ import axios from 'axios'
 import { APIResponse } from '@/types'
 
 // API key to cryptocompare
-const API_KEY            = 'b73b2c37527b0732132092aa1a15b63e96b5ef5dfde6b7010b194bd0334148fs'
+const API_KEY = 'b73b2c37527b0732132092aa1a15b63e96b5ef5dfde6b7010b194bd0334148fs'
 // cryptocompare API root
-const API_ROOT    = 'https://min-api.cryptocompare.com'
+const API_ROOT = 'https://min-api.cryptocompare.com'
 // Endpoint for top crypto currencies
 const API_TOP_CURRENCIES = 'data/top/totalvolfull'
 
@@ -24,6 +24,7 @@ async function getFromAPI(endpoint: string): Promise<APIResponse> {
   }
 }
 
+// Can be updated later to query for different `tsym`.
 async function getTopCryptoCurrencies(limit = '100', tsym = 'USD'):
   Promise<APIResponse>
 {
