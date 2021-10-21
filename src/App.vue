@@ -3,14 +3,14 @@
     <b-navbar type="dark" variant="primary" sticky>
       <div style="margin-left: 2%"></div>
       <b-navbar-brand>
-        <router-link to="/">CryptoCase</router-link>
+        <router-link :to="{ name: 'Home' }">CryptoCase</router-link>
       </b-navbar-brand>
       <b-navbar-nav>
         <b-nav-item>
-          <router-link to="/">Home</router-link>
+          <router-link :to="{ name: 'Home' }">Home</router-link>
         </b-nav-item>
         <b-nav-item>
-          <router-link to="/coins">Coin List</router-link>
+          <router-link :to="{ name: 'Coins' }">Coin List</router-link>
         </b-nav-item>
       </b-navbar-nav>
     </b-navbar>

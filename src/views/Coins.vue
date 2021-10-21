@@ -12,14 +12,14 @@
           {{ index+1 }}
         </td>
         <td>
-          <router-link :to="`/coins/${coin.id}`">
-          <div class="coin_col1">
-            <img :src="coin.imageUrl" />
-              <div class="name">
-                {{ coin.fullName }}<br />
-                {{ coin.name }}
-              </div>
-          </div>
+          <router-link :to="{ name: 'Coin', params: { id: coin.id }}">
+            <div class="coin_col1">
+              <img :src="coin.imageUrl" />
+                <div class="name">
+                  {{ coin.fullName }}<br />
+                  {{ coin.name }}
+                </div>
+            </div>
           </router-link>
         <td>
           {{ coin.coinMetrics.PRICE }}

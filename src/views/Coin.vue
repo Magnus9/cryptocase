@@ -48,7 +48,7 @@
     </b-card-text>
     <template #footer>
       <em>
-        <router-link to="/coins">
+        <router-link :to="{ name: 'Coins' }">
           <b-button variant="primary" style="float: right;">
             Go back
           </b-button>
