@@ -14,7 +14,6 @@
   .card {
     border-radius: 4px;
     border-color: gray;
-    padding: 0px 0px 0px 0px;
   }
   .card-content {
     display: flex;
