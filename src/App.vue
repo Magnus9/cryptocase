@@ -1,32 +1,44 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+    <b-navbar type="dark" variant="primary" sticky>
+      <div style="margin-left: 2%"></div>
+      <b-navbar-brand>
+        <router-link to="/">CryptoCase</router-link>
+      </b-navbar-brand>
+      <b-navbar-nav>
+        <b-nav-item>
+          <router-link to="/">Home</router-link>
+        </b-nav-item>
+        <b-nav-item>
+          <router-link to="/coins">Coin List</router-link>
+        </b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
+    <div class="container">
+      <router-view/>
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style lang="css">
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.navbar a:link {
+  color: white !important;
+  text-decoration: none;
+}
+.navbar a:visited {
+  color: white !important;
+}
+.navbar a:hover {
+  color: white !important;
+}
+.navbar a:active {
+  color: white !important;
 }
 </style>
