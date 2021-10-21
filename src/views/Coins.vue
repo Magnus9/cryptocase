@@ -1,37 +1,35 @@
 <template>
-  <div class="container">
-    <b-table-simple striped hover responsive bordered>
-      <thead>
-        <th>#</th>
-        <th>Coin</th>
-        <th>Price</th>
-        <th>Market Cap</th>
-      </thead>
-      <tbody>
-        <tr v-for="(coin, index) in this.$store.state.coins" :key="index">
-          <td>
-            {{ index+1 }}
-          </td>
-          <td>
-            <router-link :to="`/coins/${coin.id}`">
-            <div class="coin_col1">
-              <img :src="coin.imageUrl" />
-                <div class="name">
-                  {{ coin.fullName }}<br />
-                  {{ coin.name }}
-                </div>
-            </div>
-            </router-link>
-          <td>
-            {{ coin.coinMetrics.PRICE }}
-          </td>
-          <td>
-            {{ coin.coinMetrics.MKTCAP }}
-          </td>
-        </tr>
-      </tbody>
-    </b-table-simple>
-  </div>
+  <b-table-simple striped hover responsive bordered>
+    <thead>
+      <th>#</th>
+      <th>Coin</th>
+      <th>Price</th>
+      <th>Market Cap</th>
+    </thead>
+    <tbody>
+      <tr v-for="(coin, index) in this.$store.state.coins" :key="index">
+        <td>
+          {{ index+1 }}
+        </td>
+        <td>
+          <router-link :to="`/coins/${coin.id}`">
+          <div class="coin_col1">
+            <img :src="coin.imageUrl" />
+              <div class="name">
+                {{ coin.fullName }}<br />
+                {{ coin.name }}
+              </div>
+          </div>
+          </router-link>
+        <td>
+          {{ coin.coinMetrics.PRICE }}
+        </td>
+        <td>
+          {{ coin.coinMetrics.MKTCAP }}
+        </td>
+      </tr>
+    </tbody>
+  </b-table-simple>
 </template>
 
 <style lang="css">
@@ -60,10 +58,6 @@
   export default class Coins extends Vue {
     created() {
       store.dispatch('pollTopCryptoCurrencies')
-    }
-
-    updated() {
-      console.log("updated...")
     }
   }
 </script>
