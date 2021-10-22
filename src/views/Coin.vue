@@ -6,9 +6,9 @@
     <b-card-text>
       <div class="wrapper">
         <div>
-          <img :src="coin.imageUrl" style="width: 100px;" />
+          <img :src="coin.imageUrl" />
         </div>
-        <span style="padding: 0px 2px 4px 10px;">
+        <span style="padding: 0px 0px 4px 10px;">
           <a :href="coin.url">{{ coin.url }}</a>
         </span>
       </div>
@@ -62,6 +62,7 @@
   .wrapper {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   .wrapper div {
     width: 100px;
